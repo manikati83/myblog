@@ -1,0 +1,18 @@
+<ul class="list-unstyled">
+    <% diaries.each do |diary| %>
+        <li class"media mb-3">
+            <div class="media-body p-3 row border-bottom">
+                <div class="col-md-8">
+                    <h3><%= link_to diary.title, diary_path(diary) %></h3>
+                    <p class="text-muted">投稿日: <%= diary.created_at %></p>
+                </div>
+                <div class="col-md-4">
+                    <% if diary.image? %>
+                      <%= image_tag diary.image.url, style: 'max-width: 100%;' %>
+                    <% end %>
+                </div>
+            </div>
+        </li>
+    <% end %>
+    <%= paginate diaries %>
+</ul>

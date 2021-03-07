@@ -1,0 +1,10 @@
+<h1 class="border-bottom pb-2"><%= @diary.title %></h1>
+<%= @diary.created_at %>
+<div class="mt-5">
+  <p style="white-space: pre-wrap; font-size: 20px; letter-spacing: 0.05em"><%= @diary.content %></p>
+</div>
+<div>
+  <% unless @diary.image.url.nil? %>
+    <%= image_tag @diary.image.url, style: 'max-width: 100%;' %>
+  <% end %>
+</div>
